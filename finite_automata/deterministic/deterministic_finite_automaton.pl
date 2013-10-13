@@ -62,6 +62,13 @@ As an alternative you might want to use the declare predicates.
 :- dynamic( transition/3 ).
 :- dynamic( accepting_state/1 ).
 
+/*
+	begin module predicates
+*/
+
+/*
+	begin declartion predicates
+*/
 %alphabet
 declare_alphabet( [] ).
 declare_alphabet( [Character|Rest] ) :-
@@ -109,10 +116,14 @@ dfa_declare( Alphabet, States, Transitions, StartingState, AcceptingStates ) :-
 	declare_transitions( Transitions ),
 	declare_starting_state( StartingState ),
 	declare_accepting_states( AcceptingStates ).
+/*
+	end declartion predicates
+*/
 
 
-/*begin module predicates*/
-
+/*
+	begin worker predicates
+*/
 %find all declared states and put them into a list.
 dfa_get_states( States ) :-
 	findall( X, state( X ), States ).
@@ -146,5 +157,10 @@ dfa_delta( State, Character, ResultingState ) :-
 dfa_is_accepting_state( SomeState ) :-
 	dfa_get_accepting_states( AcceptingStates ),
 	member( SomeState, AcceptingStates ).
+/*
+	end worker predicates
+*/
 
-/*end module predicates*/
+/*
+	end module predicates
+*/
