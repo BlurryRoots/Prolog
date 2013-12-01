@@ -4,9 +4,13 @@
 ### Disclaimer
 
 The algorithm powering this solution is unreasonably slow. So be prepared to
-wait quite a while, the get all solutions for anything where n > 9.
+wait quite a while, to get all solutions for anything where n > 9.
 
 ### Main functionality
+
+Each of the two predicates shown here, calculate the solution under
+the assumption that the given number of queens N, also resembles the
+size of the board (N x N). The index start at 0.
 
 <table>
   <tr>
